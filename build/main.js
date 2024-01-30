@@ -8,6 +8,7 @@ let BtnRight = document.querySelector('.btnRight');
 let slide = document.querySelector('.slide');
 let modal = document.querySelector('.modal');
 const ball = document.querySelector('.ball');
+const score = document.querySelector('.score');
 class Game {
 }
 let controls = new Controls(slide, ball);
@@ -33,7 +34,7 @@ window.addEventListener('keydown', (event) => {
         }
     }
 });
-const PlayBall = new Ball(ball, slide, modal);
+const PlayBall = new Ball(ball, slide, modal, score);
 PlayBall.start();
 (_a = document.querySelector('#btnrestart')) === null || _a === void 0 ? void 0 : _a.addEventListener('click', () => {
     PlayBall.start();

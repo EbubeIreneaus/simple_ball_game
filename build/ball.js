@@ -1,5 +1,6 @@
 export class Ball {
-    constructor(ball, slide, modal) {
+    constructor(ball, slide, modal, score) {
+        this.startScore = 0;
         this.posX = 0;
         this.posY = 0;
         this.dirY = 'down';
@@ -11,12 +12,16 @@ export class Ball {
         this.ball = ball;
         this.slide = slide;
         this.modal = modal;
+        this.score = score;
         // this.posX = posX
         this.stepY = (parseFloat(getComputedStyle(this.slide).top)) / 20;
     }
     start() {
+        this.startScore = 0;
         this.interval = setInterval(() => {
+            this.startScore += 1;
             this.move();
+            this.score.innerText = `${this.startScore}`;
         }, 200);
         this.ball.style.top = "0";
         this.modal.style.display = 'none';
@@ -32,7 +37,7 @@ export class Ball {
             this.stop();
         }
         if (this.dirY == 'down') {
-            if (ballPos.top + 41 >= slidePos.top && ballPos.left >= slidePos.left && ballPos.left <= slidePos.left + 70) {
+            if (ballPos.top + 40 >= slidePos.top && ballPos.left >= slidePos.left && ballPos.left <= slidePos.left + 70) {
                 console.log(ballPos.left + "  " + slidePos.left);
                 this.dirY = 'up';
             }

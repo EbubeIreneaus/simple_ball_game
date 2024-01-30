@@ -1,44 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
     <title>Game</title>
-</head>
-<body>
-    
+  </head>
+  <body>
     <div class="body">
-        <div class="header">
-            <div class="time">
-                <span>Time</span> &nbsp;
-                <span>00</span>
-                <span>:</span>
-                <span>00</span>
-            </div>
+      <div class="header">
+        <div class="time">
+          <span>score</span>
+          <span>:</span>
+          <span class="score">00</span>
         </div>
-        <div class="game">
-            <div class="ball"></div>
+      </div>
+      <div class="game">
+        <svg
+        class="ball"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 40 40"
+          width="40"
+          height="40"
+          fill="#000000"
+        >
+          <circle cx="20" cy="20" r="16" fill="blue" />
+        </svg>
         <div class="slide"></div>
-
-        </div>
-        <div class="controls">
-            <button class="btnLeft"><</button> &nbsp; &nbsp;
-            <button class="btnRight">></button>
-
-        </div>
+      </div>
+      <div class="controls">
+        <button class="btnLeft"><</button> &nbsp; &nbsp;
+        <button class="btnRight">></button>
+      </div>
     </div>
 
     <div class="modal" id="modal">
-        <div class="modal-body">
-            <h1 style="margin-bottom: 1px;">😢</h1>
-            <h2>GAME OVER</h2>
-            <button id="btnrestart">restart</button>
-        </div>
+      <div class="modal-body">
+        <h1 style="margin-bottom: 1px">😢</h1>
+        <h2>GAME OVER</h2>
+        <button id="btnrestart">restart</button>
+      </div>
     </div>
 
- <script type="module" src="build/controls.js"></script>
- <script type="module" src="build/ball.js"></script>
-  <script type="module" src="build/main.js"></script>
-</body>
+    <script type="module" src="build/controls.js"></script>
+    <script type="module" src="build/ball.js"></script>
+    <script type="module" src="build/main.js"></script>
+  </body>
 </html>

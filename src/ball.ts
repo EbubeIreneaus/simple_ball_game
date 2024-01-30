@@ -2,6 +2,8 @@ export class Ball<T extends HTMLElement>{
     ball: T
     slide: T
     modal: T
+    score: T
+    private startScore : number = 0
     posX: number = 0
     posY: number = 0
     dirY: 'up' | 'down' = 'down'
@@ -12,17 +14,21 @@ export class Ball<T extends HTMLElement>{
     private readonly pageHeight: number = window.innerHeight 
     private readonly pageWidth : number = window.innerWidth
 
-    constructor(ball:T, slide: T, modal: T){
+    constructor(ball:T, slide: T, modal: T, score: T){
         this.ball = ball
         this.slide = slide
         this.modal = modal
+        this.score = score
         // this.posX = posX
         this.stepY = (parseFloat(getComputedStyle(this.slide).top))/20 
     }
 
     start(): void{
+        this.startScore = 0
         this.interval = setInterval(()=>{
+            this.startScore += 1
             this.move()
+            this.score.innerText = `${this.startScore}`
         }, 200) 
         this.ball.style.top = "0"
         this.modal.style.display = 'none'
@@ -48,7 +54,7 @@ export class Ball<T extends HTMLElement>{
         if (this.dirY == 'down') {
             
             
-            if (ballPos.top + 41 >= slidePos.top && ballPos.left >=slidePos.left && ballPos.left <= slidePos.left + 70) {
+            if (ballPos.top + 40 >= slidePos.top && ballPos.left >=slidePos.left && ballPos.left <= slidePos.left + 70) {
                 console.log(ballPos.left + "  "+ slidePos.left);
                 this.dirY = 'up'
             }else{

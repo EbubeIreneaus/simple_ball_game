@@ -7,6 +7,7 @@ let BtnRight = document.querySelector('.btnRight')
 let slide = document.querySelector('.slide') as HTMLElement
 let modal = document.querySelector('.modal') as HTMLElement
 const ball = document.querySelector('.ball') as HTMLElement
+const score = document.querySelector('.score') as HTMLElement
 
 class Game {
 
@@ -42,7 +43,7 @@ window.addEventListener('keydown', (event)=>{
       }
 })
 
-const PlayBall = new Ball<HTMLElement>(ball as HTMLElement, slide as HTMLElement, modal as HTMLElement)
+const PlayBall = new Ball<HTMLElement>(ball as HTMLElement, slide as HTMLElement, modal as HTMLElement, score as HTMLElement)
 PlayBall.start()
 
 document.querySelector('#btnrestart')?.addEventListener('click',()=> {
