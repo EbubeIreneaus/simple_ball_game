@@ -1,0 +1,99 @@
+*{
+    box-sizing: border-box;
+    overflow: hidden;
+}
+body{
+    height: 100vh;
+
+    margin: 0;
+    padding: 0%;
+    border: 1px solid black;
+    
+}
+.game{
+    width: 100%;
+}
+.body{
+    height: calc(100vh - 40px);
+    position: relative;
+}
+.header{
+width: 100%;
+height: 40px;
+border: 1px solid red;
+display: flex;
+align-items: center;
+padding: 0 10px;
+
+}
+.time{
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    font-family: monospace;
+   margin-left: auto;
+   
+}
+.time span{
+    font-size: larger;
+}
+.slide{
+    width: 70px;
+    height: 5px;
+    background-color: black;
+    position: absolute;
+    bottom: 100px;
+    left: calc(50% - 70px);
+    transition: all ease .2s;
+}
+.ball{
+    width: 20px;
+    height: 20px;
+    outline: 1px solid grey;
+    outline-offset: 1px;
+    border-radius: 50%;
+    background-color: black;
+    position: absolute;
+    transition: all ease .3s;
+}
+.controls{
+    position: fixed;
+    width: 100%;
+    bottom: 30px;
+   left: 80%;
+}
+.controls button{
+    padding: 20px;
+    font-weight: bolder;
+}
+
+.modal{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 10px;
+}
+.modal .modal-body{
+    max-width: 768px;
+    width: 100%;
+    min-height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+   background-color: whitesmoke;
+    padding: 20px 0;
+}
+
+@media only screen and (max-width: 646px){
+    .controls{
+        position: fixed;
+        width: 100%;
+        bottom: 30px;
+       left: 60%;
+    }
+}

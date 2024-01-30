@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Game</title>
+</head>
+<body>
+    
+    <div class="body">
+        <div class="header">
+            <div class="time">
+                <span>Time</span> &nbsp;
+                <span>00</span>
+                <span>:</span>
+                <span>00</span>
+            </div>
+        </div>
+        <div class="game">
+            <div class="ball"></div>
+        <div class="slide"></div>
+
+        </div>
+        <div class="controls">
+            <button class="btnLeft"><</button> &nbsp; &nbsp;
+            <button class="btnRight">></button>
+
+        </div>
+    </div>
+
+    <div class="modal" id="modal">
+        <div class="modal-body">
+            <h1 style="margin-bottom: 1px;">😢</h1>
+            <h2>GAME OVER</h2>
+            <button id="btnrestart">restart</button>
+        </div>
+    </div>
+
+ <script type="module" src="build/controls.js"></script>
+ <script type="module" src="build/ball.js"></script>
+  <script type="module" src="build/main.js"></script>
+</body>
+</html>
